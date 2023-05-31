@@ -19,7 +19,7 @@ forecastDropdown.addEventListener("change", forecast);
 
 function searchCity() {
   const inputText = textInput.value;
-  const url = "http://api.openweathermap.org/geo/1.0/direct?q=" +
+  const url = "https://api.openweathermap.org/geo/1.0/direct?q=" +
     inputText + ",,se&limit=1&appid=" +
     apiKey;
 
@@ -29,7 +29,7 @@ function searchCity() {
     })
     .then(function (data) {
       // geoData located
-      const url2 = "http://api.openweathermap.org/data/2.5/weather?units=metric&lat=" +
+      const url2 = "https://api.openweathermap.org/data/2.5/weather?units=metric&lat=" +
         data[0].lat + "&lon=" +
         data[0].lon +"&appid=" +
         apiKey;
@@ -60,7 +60,7 @@ function forecast() {
   const inputText = textInput.value;
   const optionValue = forecastDropdown.value;
   console.log(optionValue);
-  const url ="http://api.openweathermap.org/geo/1.0/direct?q=" +
+  const url ="https://api.openweathermap.org/geo/1.0/direct?q=" +
     inputText + ",,se&limit=1&appid=" +
     apiKey;
 
@@ -70,7 +70,7 @@ function forecast() {
     })
     .then(function (data) {
       // geoData located
-      const url2 = "http://api.openweathermap.org/data/2.5/forecast?units=metric&lat=" +
+      const url2 = "https://api.openweathermap.org/data/2.5/forecast?units=metric&lat=" +
         data[0].lat + "&lon=" +
         data[0].lon +"&appid=" +
         apiKey;
